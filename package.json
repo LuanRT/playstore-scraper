@@ -1,0 +1,29 @@
+{
+  "name": "playstore-scraper",
+  "version": "1.0.0",
+  "description": "A module to parse search results from Google Play Store and much more.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+    "dependencies": {
+    "cheerio": "^1.0.0-rc.6",
+    "axios": "^0.21.1",
+    "user-agents": "^1.0.636",
+    "escape-string-regexp" : "^5.0.0"
+  },
+  "keywords": [
+    "google-play-store-scraper",
+    "google-play",
+    "scraper",
+    "search-results",
+    "parser",
+    "googleplay",
+    "playstore"
+  ],
+  "author": "LuanRT",
+  "license": "MIT"
+}
