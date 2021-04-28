@@ -1,1 +1,1 @@
-module.exports = require('./lib/playstore');
+module.exports = require("./lib/playstore");

@@ -9,11 +9,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-    "dependencies": {
+  "dependencies": {
     "cheerio": "^1.0.0-rc.6",
     "axios": "^0.21.1",
     "user-agents": "^1.0.636",
-    "escape-string-regexp" : "^5.0.0"
+    "escape-string-regexp": "^5.0.0"
   },
   "keywords": [
     "google-play-store-scraper",
