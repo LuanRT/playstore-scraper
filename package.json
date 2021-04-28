@@ -15,6 +15,10 @@
     "user-agents": "^1.0.636",
     "escape-string-regexp": "^5.0.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https//github.com/LuanLRT/playstore-scraper.git"
+  },
   "keywords": [
     "google-play-store-scraper",
     "google-play",
