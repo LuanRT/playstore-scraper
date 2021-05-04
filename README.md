@@ -6,14 +6,17 @@ However, keep in mind that this module may break without any warning if updates 
 ## Usage
 
 ```js
-const playstore = require('../path/to/playstore-scraper');
+const playstore = require("../path/to/playstore-scraper");
 
 // A simple search:
 
-playstore.search('TWDG').then((res) => {
+playstore
+  .search("TWDG")
+  .then((res) => {
     console.log(res);
-  }).catch((err) => console.log(err));
-    
+  })
+  .catch((err) => console.log(err));
+
 /** You would get something like this:
 [
   {
@@ -38,17 +41,26 @@ playstore.search('TWDG').then((res) => {
 
 // If you need to get more info about a certain item:
 
-playstore.search('TWDG').then((res) => {
-    playstore.getExtendedInfo(res[0].link).then((res) => {
-      console.log(res);
-    }).catch((err) => console.log(err));
-  }).catch((err) => console.log(err));
-  
+playstore
+  .search("TWDG")
+  .then((res) => {
+    playstore
+      .getExtendedInfo(res[0].link)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+  })
+  .catch((err) => console.log(err));
+
 // Or:
 
-playstore.getExtendedInfoById('com.telltalegames.walkingdead200').then((res) => {
-  console.log(res);
-}).catch((err) => console.log(err));
+playstore
+  .getExtendedInfoById("com.telltalegames.walkingdead200")
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => console.log(err));
 
 /** The expected output:
 {
@@ -121,4 +133,5 @@ playstore.getExtendedInfoById('com.telltalegames.walkingdead200').then((res) => 
 ```
 
 ## License
+
 [MIT](/LICENSE)
