@@ -1,22 +1,19 @@
 # Play Store Scraper
 
-A simple and fast way to scrape Google Play Store.
-However, keep in mind that this module might stop working if Google decides to change Play Store's html page!
+A simple and fast way to get search results and more from Google Play Store.
+However, keep in mind that this module may break without any warning if updates are made to the Google Play Store's website!
 
 ## Usage
 
 ```js
-const playstore = require("../path/to/playstore-scraper");
+const playstore = require('../path/to/playstore-scraper');
 
 // A simple search:
 
-playstore
-  .search("TWDG")
-  .then((res) => {
+playstore.search('TWDG').then((res) => {
     console.log(res);
-  })
-  .catch((err) => console.log(err));
-
+  }).catch((err) => console.log(err));
+    
 /** You would get something like this:
 [
   {
@@ -41,26 +38,17 @@ playstore
 
 // If you need to get more info about a certain item:
 
-playstore
-  .search("TWDG")
-  .then((res) => {
-    playstore
-      .getExtendedInfo(res[0].link)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => console.log(err));
-  })
-  .catch((err) => console.log(err));
-
+playstore.search('TWDG').then((res) => {
+    playstore.getExtendedInfo(res[0].link).then((res) => {
+      console.log(res);
+    }).catch((err) => console.log(err));
+  }).catch((err) => console.log(err));
+  
 // Or:
 
-playstore
-  .getExtendedInfoById("com.telltalegames.walkingdead200")
-  .then((res) => {
-    console.log(res);
-  })
-  .catch((err) => console.log(err));
+playstore.getExtendedInfoById('com.telltalegames.walkingdead200').then((res) => {
+  console.log(res);
+}).catch((err) => console.log(err));
 
 /** The expected output:
 {
@@ -119,7 +107,7 @@ playstore
     'https://play-lh.googleusercontent.com/0EDO5AMspwBISoBcFUz034z6VwlckGVyYpL-XwcXdqhoOUv8TBNMLVqznptTmiYCa_M=w1440-h620-rw',
     'https://play-lh.googleusercontent.com/aGy4UirR-thBLGhTd-K48lHeqPtORT3xKXlRNiISYzaVFwkIeblXvZ6Mt2Z3MR5C1Yg=w1440-h620-rw'
   ],
-  additional_info: {
+  additional_info: [
     content_rating: 'Rated 16+',
     inapp_purchases: 'R$15.99 - R$47.99 per item',
     developer: 'Howyaknow, LLC',
@@ -127,12 +115,10 @@ playstore
     installs: '10,000,000+',
     updated: 'November 29, 2016',
     size: '12M'
-  },
-  found : true
+  ]
 }
 **/
 ```
 
 ## License
-
 [MIT](/LICENSE)
