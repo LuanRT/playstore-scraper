@@ -6,69 +6,61 @@ However, keep in mind that this module may break without any warning if updates 
 ## Usage
 
 ```js
-const playstore = require("../path/to/playstore-scraper");
+const playstore = require('../path/to/playstore-scraper');
 
 // A simple search:
 
-playstore
-  .search("TWDG")
-  .then((res) => {
+playstore.search('TWDG').then((res) => {
     console.log(res);
-  })
-  .catch((err) => console.log(err));
-
+  }).catch((err) => console.log(err));
+    
 /** You would get something like this:
 [
-  {
-    title: 'The Walking Dead: Season Two',
-    description: 'Sequel to the critically acclaimed and award-winning game series!',
-    icon: 'https://play-lh.googleusercontent.com/XDbml9kNG4ziL-K0eINJ_l5iLsyuj35QOG16gFToTgvZkew_mTDa5Um4uqoBsGaCXbI=s256-rw',
-    rating: '4.5',
-    developer: 'Howyaknow, LLC',
-    link: 'https://play.google.com/store/apps/details?id=com.telltalegames.walkingdead200'
-  },
-  {
-    title: 'The Walking Dead: Season One',
-    description: 'Critically acclaimed game series and winner of over 90 Game of the Year awards!',
-    icon: 'https://play-lh.googleusercontent.com/Z4DBaIKoo88TwrBNzaUvsgJWs5f0CiIo8kOVIt-EAB9vajKeia3d6WTvdCp4ExTuLlQ=s256-rw',
-    rating: '4.3',
-    developer: 'Howyaknow, LLC',
-    link: 'https://play.google.com/store/apps/details?id=com.telltalegames.walkingdead100'
-  },
-  ....
+  results: [
+    {
+      title: 'The Walking Dead: Season Two',
+      description: 'Sequel to the critically acclaimed and award-winning game series!',
+      icon: 'https://play-lh.googleusercontent.com/XDbml9kNG4ziL-K0eINJ_l5iLsyuj35QOG16gFToTgvZkew_mTDa5Um4uqoBsGaCXbI=s256-rw',
+      rating: '4.5',
+      developer: 'Howyaknow, LLC',
+      link: 'https://play.google.com/store/apps/details?id=com.telltalegames.walkingdead200'
+    },
+    {
+      title: 'The Walking Dead: Season One',
+      description: 'Critically acclaimed game series and winner of over 90 Game of the Year awards!',
+      icon: 'https://play-lh.googleusercontent.com/Z4DBaIKoo88TwrBNzaUvsgJWs5f0CiIo8kOVIt-EAB9vajKeia3d6WTvdCp4ExTuLlQ=s256-rw',
+      rating: '4.5',
+      developer: 'Howyaknow, LLC',
+      link: 'https://play.google.com/store/apps/details?id=com.telltalegames.walkingdead100'
+    },
+    .....
+  ],
+  found: true
 ]
 **/
 
 // If you need to get more info about a certain item:
 
-playstore
-  .search("TWDG")
-  .then((res) => {
-    playstore
-      .getExtendedInfo(res[0].link)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => console.log(err));
-  })
-  .catch((err) => console.log(err));
-
+playstore.search('TWDG').then((res) => {
+    playstore.getExtendedInfo(res.results[0].link).then((res) => {
+      console.log(res);
+    }).catch((err) => console.log(err));
+  }).catch((err) => console.log(err));
+  
 // Or:
 
-playstore
-  .getExtendedInfoById("com.telltalegames.walkingdead200")
-  .then((res) => {
-    console.log(res);
-  })
-  .catch((err) => console.log(err));
+playstore.getExtendedInfoById('com.telltalegames.walkingdead200').then((res) => {
+  console.log(res);
+}).catch((err) => console.log(err));
 
 /** The expected output:
-{
-  title: 'The Walking Dead: Season Two',                                
+[
+  title: 'The Walking Dead: Season Two',
   snippet: 'Sequel to the critically acclaimed and award-winning game series!',
   version: '1.35',
-  whatsnew: 'Updates for episode 5.',                            
-  description: 'The Walking Dead: Season Two is a five-part (Episodes 2-5 can be purchased via in-app) game series that continues the story of Clementine, a young girl orphaned by the undead apocalypse. Left to fend for herself, she has been forced to learn how to survive in a world gone mad. Many months have passed since the events seen in Season One of The Walking Dead, and Clementine is searching for safety. But what can an ordinary child do to stay alive when the living can be just as bad – and sometimes worse – than the dead? As Clementine, you will be tested by situations and dilemmas that will test your morals and your instinct for survival. Your decisions and actions will change the story around you, in this sequel to 2012’s Game of the Year.\n' +                    '\n' +
+  whatsnew: 'Updates for episode 5.',
+  description: 'The Walking Dead: Season Two is a five-part (Episodes 2-5 can be purchased via in-app) game series that continues the story of Clementine, a young girl orphaned by the undead apocalypse. Left to fend for herself, she has been forced to learn how to survive in a world gone mad. Many months have passed since the events seen in Season One of The Walking Dead, and Clementine is searching for safety. But what can an ordinary child do to stay alive when the living can be just as bad – and sometimes worse – than the dead? As Clementine, you will be tested by situations and dilemmas that will test your morals and your instinct for survival. Your decisions and actions will change the story around you, in this sequel to 2012’s Game of the Year.\n' +
+    '\n' +
     '• Decisions you made in Season One and in 400 Days will affect your story in Season Two\n' +
     '• Play as Clementine, an orphaned girl forced to grow up fast by the world around her\n' +
     '• Meet new survivors, explore new locations and make gruesome choices\n' +
@@ -98,7 +90,7 @@ playstore
   icon: 'https://play-lh.googleusercontent.com/XDbml9kNG4ziL-K0eINJ_l5iLsyuj35QOG16gFToTgvZkew_mTDa5Um4uqoBsGaCXbI=s360-rw',
   trailer: 'https://youtu.be/sSG_IlSksso',
   rating: '4.5',
-  ratings: '676,116 ratings',
+  ratings: '676,319 ratings',
   screenshots: [
     'https://play-lh.googleusercontent.com/erO075wiQfn8ULD4ug8tkH57nR1qSS05RTYbhspi443TUpCEzhXPzo02YcZqhG-EQIQu=w1440-h620-rw',
     'https://play-lh.googleusercontent.com/fSAshoC4C9-J5mqzKg6nxxxi8GWQXTzobvVyy4p9KiMgQUE-Bk3fmKL6ylCEdtpXdQ=w1440-h620-rw',
@@ -128,10 +120,9 @@ playstore
     updated: 'November 29, 2016',
     size: '12M'
   ]
-}
+]
 **/
 ```
 
 ## License
-
 [MIT](/LICENSE)
