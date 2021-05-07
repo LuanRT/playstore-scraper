@@ -16,8 +16,10 @@ playstore
     console.log(res);
   })
   .catch((err) => console.log(err));
+```
 
-/** You would get something like this:
+## Response:
+```js
 [
   results: [
     {
@@ -40,10 +42,9 @@ playstore
   ],
   found: true
 ]
-**/
-
-// If you need to get more info about a certain item:
-
+```
+## If you need to get more info about a certain item:
+```js
 playstore
   .search("TWDG")
   .then((res) => {
@@ -64,8 +65,9 @@ playstore
     console.log(res);
   })
   .catch((err) => console.log(err));
-
-/** The expected output:
+```
+## The expected output:
+```js
 [
   title: 'The Walking Dead: Season Two',
   snippet: 'Sequel to the critically acclaimed and award-winning game series!',
@@ -133,7 +135,6 @@ playstore
     size: '12M'
   ]
 ]
-**/
 ```
 
 ## License
