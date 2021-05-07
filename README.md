@@ -19,6 +19,7 @@ playstore
 ```
 
 ## Response:
+
 ```js
 [
   results: [
@@ -43,7 +44,9 @@ playstore
   found: true
 ]
 ```
+
 ## If you need to get more info about a certain item:
+
 ```js
 playstore
   .search("TWDG")
@@ -66,7 +69,9 @@ playstore
   })
   .catch((err) => console.log(err));
 ```
+
 ## The expected output:
+
 ```js
 [
   title: 'The Walking Dead: Season Two',
