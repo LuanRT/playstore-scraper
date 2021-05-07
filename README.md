@@ -3,10 +3,16 @@
 A simple and fast way to get search results and more from Google Play Store.
 However, keep in mind that this module may break without any warning if updates are made to the Google Play Store's website!
 
+## Installation
+
+```bash
+npm install playstore-scraper
+```
+
 ## Usage
 
 ```js
-const playstore = require("../path/to/playstore-scraper");
+const playstore = require("playstore-scraper");
 
 // A simple search:
 
