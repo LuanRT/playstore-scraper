@@ -1,7 +1,7 @@
 {
   "name": "playstore-scraper",
-  "version": "1.0.0",
-  "description": "A module to parse search results from Google Play Store and much more.",
+  "version": "1.0.1",
+  "description": "A module to parse search results and much more from the Google Play Store.",
   "main": "index.js",
   "directories": {
     "lib": "lib"
