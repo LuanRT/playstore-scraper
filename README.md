@@ -1,4 +1,5 @@
 # Play Store Scraper
+[![Build](https://github.com/LuanRT/playstore-scraper/actions/workflows/node.js.yml/badge.svg)](https://github.com/LuanRT/playstore-scraper/actions/workflows/node.js.yml)
 
 A simple and fast way to get search results and more from Google Play Store. However, keep in mind that this module may break without any warning if updates are made to the Google Play Store website.
 
