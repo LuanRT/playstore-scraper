@@ -25,7 +25,6 @@ playstore
 
 Output:
 
-
 ```js
 {
    "results": [
@@ -75,6 +74,7 @@ playstore
   })
   .catch((err) => console.log(err));
 ```
+
 Expected output:
 
 ```js
