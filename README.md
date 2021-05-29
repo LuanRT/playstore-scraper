@@ -25,6 +25,7 @@ playstore
 
 Output:
 
+
 ```js
 {
    "results": [
@@ -74,7 +75,6 @@ playstore
   })
   .catch((err) => console.log(err));
 ```
-
 Expected output:
 
 ```js
@@ -112,7 +112,7 @@ Expected output:
    "genre": "Adventure",
    "price"  "Free",
    "icon": "https://play-lh.googleusercontent.com/XDbml9kNG4ziL-K0eINJ_l5iLsyuj35QOG16gFToTgvZkew_mTDa5Um4uqoBsGaCXbI=s360-rw",
-   "trailer"  "https://youtu.be/sSG_IlSksso",
+   "trailer": "https://youtu.be/sSG_IlSksso",
    "rating": "4.5",
    "ratings": "676,319 ratings",
    "screenshots": [
