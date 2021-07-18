@@ -2,7 +2,7 @@
 
 [![Build](https://github.com/LuanRT/playstore-scraper/actions/workflows/node.js.yml/badge.svg)](https://github.com/LuanRT/playstore-scraper/actions/workflows/node.js.yml)
 
-A simple and fast way to get search results & app info from Google Play Store. 
+A simple and fast way to get search results & app info from Google Play Store.
 
 ## Installation
 
